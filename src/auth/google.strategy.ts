@@ -1,16 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { Strategy, VerifyCallback } from 'passport-google-oauth20';
-import {scts} from 'sensitiveCts';
+import {cts} from 'cts';
 
 @Injectable()
 export class GoogleStrategy extends PassportStrategy(Strategy, 'google') {
     constructor() {
         super({
-            clientID: scts.oAuth2.google.clientID,
-            clientSecret: scts.oAuth2.google.clientSecret,
-            callbackURL: scts.oAuth2.google.callbackURL,
-            scope: scts.oAuth2.google.scope,
+            clientID: cts.oAuth2.google.clientID,
+            clientSecret: cts.oAuth2.google.clientSecret,
+            callbackURL: cts.oAuth2.google.callbackURL,
+            scope: cts.oAuth2.google.scope,
         });
     }
 
